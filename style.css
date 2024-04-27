@@ -42,6 +42,11 @@
     color: var(--main-color);
     width: fit-content;
     font-weight: 600;
+    transition: all 150ms ease-out;
+}
+.btn:hover {
+    background-color: var(--main-color);
+    color: #fff;
 }
 .btn2 {
     display: flex;
@@ -88,6 +93,10 @@
     box-shadow: 0 0 0 2px #fff;
     font-weight: 400;
 }
+.dark .btn:hover {
+    background-color: #fff;
+    color: var(--bg-color);
+}
 .dark .btn2, .dark .btn2 svg {
     font-weight: 400;
     fill: #fff;
@@ -111,7 +120,12 @@
     text-transform: uppercase;
 }
 
-section {
+.bold {
+    font-weight: 600;
+    color: inherit;
+}
+
+section, footer {
     margin-top: 150px;
     padding: var(--marge);
 }
@@ -252,7 +266,7 @@ h1 {
     padding: 25px;
     background-image: radial-gradient(circle at top right, rgba(255, 255, 255, .1), #ffffff00);
 }
-#qualité .devis {
+.devis {
     display: flex;
     align-items: center;
     max-width: var(--max-size);
@@ -261,11 +275,11 @@ h1 {
     justify-content: space-between;
     flex-wrap: wrap;
 }
-#qualité .devis > div {
+.devis > div {
     display: grid;
     gap: 15px;
 }
-#qualité .devis > div:last-child {
+.devis > div:last-child {
     place-items: center;
 }
 
@@ -342,4 +356,47 @@ h1 {
 }
 #contenu .container > div {
     max-width: 650px;
+}
+
+
+
+#articles h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+#articles__container {
+    display: flex;
+    gap: 50px;
+    padding: 25px !important;
+    max-width: 1330px !important;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+.article {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    flex-grow: 1;
+    flex-basis: 0;
+    gap: 25px;
+    padding: 25px;
+    min-width: 350px;
+    height: 600px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.15);
+    background-size: cover;
+    overflow: hidden;
+}
+.article::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0) 75%);
+}
+.article * {
+    fill: #fff;
+    color: #fff;
 }
