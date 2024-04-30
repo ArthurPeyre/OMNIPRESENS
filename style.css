@@ -162,20 +162,23 @@ header nav ul {
 header ul li:first-child {
     margin-right: auto;
 }
-header ul li:first-child a, header ul {
+header ul li:first-child a, header ul, #footer div:first-child a:first-child {
     display: flex;
     align-items: center;
     gap: 15px;
 }
-header ul li:first-child a {
+header ul li:first-child a, #footer div:first-child a:first-child {
     font-size: 32px;
 }
-header a svg {
+header a svg, #footer div:first-child a:first-child svg {
     height: 28px;
     width: fit-content;
 }
 header ul {
     gap: 25px;
+}
+header #burger_menu {
+    display: none;
 }
 
 
@@ -274,6 +277,7 @@ h1 {
     margin-top: 50px;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 50px;
 }
 .devis > div {
     display: grid;
@@ -330,6 +334,7 @@ h1 {
 #boutique .apps img {
     height: 50px;
     width: fit-content;
+    object-fit: contain;
 }
 
 
@@ -399,4 +404,37 @@ h1 {
 .article * {
     fill: #fff;
     color: #fff;
+}
+
+
+
+footer hr {
+    margin: 50px auto;
+    max-width: var(--max-size);
+}
+#footer > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    max-width: var(--max-size);
+    margin: 0 auto;
+}
+#footer > div:first-child {
+    margin-bottom: 25px;
+}
+#footer > div *:first-child {
+    margin-right: auto;
+}
+#footer a svg {
+    height: 40px;
+}
+
+
+@media (max-width: 850px) {
+    header ul li {
+        display: none;
+    }
+    header #burger_menu, header ul li:first-child {
+        display: initial;
+    }
 }
