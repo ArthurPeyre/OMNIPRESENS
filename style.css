@@ -210,17 +210,16 @@ h1 {
 #landing p {
     max-width: 400px;
 }
-/* #landing #expertise::after {
+#landing #expertise::after {
     content: "";
     position: absolute;
     width: 2px;
-    height: 80%;
-    top: 50%;
-    transform: translateY(-50%);
+    height: 36px;
+    bottom: 3px;
     right: -5px;
     background-color: #fff;
     animation: writeBar 1000ms infinite;
-} */
+}
 .phone_anim {
     position: absolute;
     top: 0;
