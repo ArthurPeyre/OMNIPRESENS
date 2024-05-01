@@ -17,8 +17,8 @@
     --gray-color: #9DA2AF;
     --marge: 50px;
     --decal: 50px;
-    --min-size: 1280px;
-    --max-size: 1280px;
+    --min-size: 1380px;
+    --max-size: 1380px;
 }
 
 
@@ -143,6 +143,11 @@ h2 {
 }
 
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
     font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;
@@ -154,13 +159,13 @@ body {
 header {
     position: absolute;
     top: 0;
-    padding: 0 var(--marge);
     z-index: 999;
     width: 100%;
 }
 header nav ul {
     margin: 0 auto;
     height: 75px;
+    padding: 0 var(--marge);
 }
 header ul li:first-child {
     margin-right: auto;
@@ -203,6 +208,33 @@ h1 {
 }
 #landing p {
     max-width: 400px;
+}
+/* #landing #expertise::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 80%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -5px;
+    background-color: #fff;
+    animation: writeBar 1000ms infinite;
+} */
+
+
+@keyframes writeBar {
+    0% {
+        visibility: visible;
+        opacity: 1;
+    }
+    50% {
+        visibility: visible;
+        opacity: 1;
+    }
+    100% {
+        visibility: hidden;
+        opacity: 0;
+    }
 }
 
 
@@ -362,8 +394,8 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to top right, #000, rgba(0, 0, 0, 0));
-    opacity: 0.75;
+    background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0) 65%);
+    opacity: 0.65;
 }
 #contenu .container {
     height: 100%;
@@ -429,6 +461,12 @@ h1 {
 footer > div {
     padding: var(--marge);
 }
+footer .devis {
+    padding-bottom: 0;
+}
+footer > div:last-child {
+    padding-top: 0;
+}
 footer hr {
     margin: 50px auto;
     max-width: calc(var(--max-size) - 2*var(--marge));
@@ -455,20 +493,20 @@ footer hr {
 
 
 
-@media (max-width: 900px) {
-    :root {
-        --marge: 25px;
-        --decal: 50px;
-    }
-}
-
-
-@media (max-width: 850px) {
+@media (max-width: 950px) {
     header ul li {
         display: none;
     }
     header #burger_menu, header ul li:first-child {
         display: initial;
+    }
+}
+
+
+@media (max-width: 900px) {
+    :root {
+        --marge: 25px;
+        --decal: 50px;
     }
 }
 
