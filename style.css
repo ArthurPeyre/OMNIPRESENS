@@ -193,6 +193,7 @@ header #burger_menu {
 #landing {
     margin: 0;
     height: min(100vh, 1000px);
+    overflow: hidden;
 }
 #landing .container {
     max-width: var(--min-size);
@@ -220,6 +221,12 @@ h1 {
     background-color: #fff;
     animation: writeBar 1000ms infinite;
 } */
+.phone_anim {
+    position: absolute;
+    top: 0;
+    right: 250px;
+    height: 135%;
+}
 
 
 @keyframes writeBar {
@@ -385,6 +392,7 @@ h1 {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    /* background-image: url('./images/img5.jpg'); */
 }
 #contenu::before {
     content: "";
