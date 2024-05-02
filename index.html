@@ -28,23 +28,25 @@
     </header>
 
     <section id="landing" class="dark">
-        <video class="phone_anim" muted>
-            <source src="./images/0c181534a6b84c9887d1ceb73c8673d9.webm" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <video class="phone_anim" muted style="display: none;">
-            <source src="./images/3e2f8a27ae1247d3a0908886bd19a77a.webm" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <video class="phone_anim" muted style="display: none;">
-            <source src="./images/64cd0cefd2554d9798231e8359c7b16a.webm" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <video class="phone_anim" muted style="display: none;">
-            <source src="./images/030e1481bfcf4ebea2ac55e6ff9ceb59.webm" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
         <div class="container">
+            <div id="phone_container">
+                <video class="phone_anim" muted>
+                    <source src="./images/Composition 1,1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video class="phone_anim" muted style="display: none;">
+                    <source src="./images/Composition 1,1_1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video class="phone_anim" muted style="display: none;">
+                    <source src="./images/Composition 1,1_2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video class="phone_anim" muted style="display: none;">
+                    <source src="./images/Composition 1,1_3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
             <div>
                 <h1>Développer la présence de votre <span class="bold"><span class="blue">boutique</span> en ligne</span></h1>
                 <p class="uppercase">Nous ne sommes pas de simples prestataires, nous sommes vos <span class="blue">partenaires</span></p>
@@ -304,66 +306,62 @@
 
 
     <script>
+        var expertise = document.getElementById('expertise');
+        var tabExpertises = [
+            'Google Ads', 
+            'Google Shopping',  
+            'SEO', 
+            'Adobe After Effects', 
+            'Adobe Premiere Pro', 
+            'Adobe Photoshop', 
+            'Wordpress', 
+            'Shopify', 
+            'Web Design', 
+            'Développement Web'
+        ];
+        var currentIndex = 0;
+        var currentText = '';
+        var letterIndex = 0;
+        var intervalId;
+
+        var videos = document.querySelectorAll('.phone_anim');
+
+        function playNextVideo(index) {
+            videos[index].style.display = 'none';
+            var nextIndex = (index + 1) % videos.length;
+            videos[nextIndex].style.display = 'block';
+            videos[nextIndex].play();
+        }
+
+        // Fonction pour effacer le texte précédent lettre par lettre
+        function eraseText() {
+            if (expertise.textContent.length > 0) {
+                expertise.textContent = expertise.textContent.slice(0, -1);
+                setTimeout(eraseText, 50); // Vitesse de suppression (en millisecondes)
+            } else {
+                updateText(); // Une fois que le texte est effacé, appeler la fonction pour afficher le nouveau texte
+            }
+        }
+
+        // Fonction pour mettre à jour le texte lettre par lettre
+        function updateText() {
+            if (letterIndex < tabExpertises[currentIndex].length) {
+                currentText += tabExpertises[currentIndex].charAt(letterIndex);
+                expertise.textContent = currentText;
+                letterIndex++;
+                setTimeout(updateText, 100); // Vitesse d'ajout de chaque lettre (en millisecondes)
+            } else {
+                currentIndex = (currentIndex + 1) % tabExpertises.length;
+                currentText = '';
+                letterIndex = 0;
+                setTimeout(eraseText, 1000); // Durée avant d'effacer le texte précédent et afficher le nouveau texte (en millisecondes)
+            }
+        }
+
         // Démarrer le processus après que la page soit complètement chargée
         window.addEventListener('load', function() {
-            var expertise = document.getElementById('expertise');
-            var tabExpertises = [
-                'Google Ads', 
-                'Google Shopping',  
-                'SEO', 
-                'Adobe After Effects', 
-                'Adobe Premiere Pro', 
-                'Adobe Photoshop', 
-                'Wordpress', 
-                'Shopify', 
-                'Web Design', 
-                'Développement Web'
-            ];
-            var currentIndex = 0;
-            var currentText = '';
-            var letterIndex = 0;
-            var intervalId;
-
-            // Fonction pour effacer le texte précédent lettre par lettre
-            function eraseText() {
-                if (expertise.textContent.length > 0) {
-                    expertise.textContent = expertise.textContent.slice(0, -1);
-                    setTimeout(eraseText, 50); // Vitesse de suppression (en millisecondes)
-                } else {
-                    updateText(); // Une fois que le texte est effacé, appeler la fonction pour afficher le nouveau texte
-                }
-            }
-
-            // Fonction pour mettre à jour le texte lettre par lettre
-            function updateText() {
-                if (letterIndex < tabExpertises[currentIndex].length) {
-                    currentText += tabExpertises[currentIndex].charAt(letterIndex);
-                    expertise.textContent = currentText;
-                    letterIndex++;
-                    setTimeout(updateText, 100); // Vitesse d'ajout de chaque lettre (en millisecondes)
-                } else {
-                    currentIndex = (currentIndex + 1) % tabExpertises.length;
-                    currentText = '';
-                    letterIndex = 0;
-                    setTimeout(eraseText, 1000); // Durée avant d'effacer le texte précédent et afficher le nouveau texte (en millisecondes)
-                }
-            }
-
             // document.getElementById('body').style.visibility = 'visible';
             updateText();
-        });
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var videos = document.querySelectorAll('.phone_anim');
-
-            function playNextVideo(index) {
-                videos[index].style.display = 'none';
-                var nextIndex = (index + 1) % videos.length;
-                videos[nextIndex].style.display = 'block';
-                videos[nextIndex].play();
-            }
 
             videos[0].addEventListener('ended', function() {
                 playNextVideo(0);

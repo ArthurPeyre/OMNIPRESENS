@@ -92,9 +92,21 @@
     color: #fff;
     fill: #fff;
 }
+/* .dark a::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    background-color: #fff;
+    height: 2px;
+    width: 100%;
+} */
 .dark .btn {
     box-shadow: 0 0 0 2px #fff;
     font-weight: 400;
+}
+.dark .btn::before, .dark .btn2::before {
+    display: none;
 }
 .dark .btn:hover {
     background-color: #fff;
@@ -220,11 +232,20 @@ h1 {
     background-color: #fff;
     animation: writeBar 1000ms infinite;
 }
+#phone_container {
+    position: absolute;
+    width: 65%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+}
 .phone_anim {
     position: absolute;
     top: 0;
-    right: 250px;
-    height: 135%;
+    right: var(--marge);
+    height: 125%;
+    width: 100%;
+    margin: auto 0;
 }
 
 
@@ -536,8 +557,30 @@ footer hr {
         place-content: end;
     }
 
+    #landing {
+        height: max(100vh,800px);
+    }
     #landing .container > div {
-        place-content: center;
+        padding-top: 75px;
+        place-content: top;
+        width: 100%;
+    }
+    #phone_container {
+        bottom: 0;
+        right: 0;
+    }
+    .phone_anim {
+        top: 25%;
+        right: var(--marge);
+        height: 125%;
+        width: 100%;
+        margin: auto 0;
+    }
+}
+
+@media (max-height: 600px) {
+    .phone_anim {
+        opacity: 0.5;
     }
 }
 
@@ -569,5 +612,11 @@ footer hr {
 
     section, footer {
         margin-top: 75px;
+    }
+}
+
+@media (max-width: 375px) {
+    header ul li:first-child a {
+        display: initial;
     }
 }
