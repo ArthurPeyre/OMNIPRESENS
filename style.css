@@ -92,15 +92,20 @@
     color: #fff;
     fill: #fff;
 }
-/* .dark a::before {
+.dark a::before {
     content: "";
     position: absolute;
     bottom: -2px;
     left: 0;
     background-color: #fff;
     height: 2px;
+    width: 0;
+    transition: all 150ms linear;
+}
+.dark a:hover::before {
     width: 100%;
-} */
+    right: 0;
+}
 .dark .btn {
     box-shadow: 0 0 0 2px #fff;
     font-weight: 400;
@@ -190,6 +195,9 @@ header ul li:first-child a, header ul, #footer div:first-child a:first-child {
 header ul li:first-child a, #footer div:first-child a:first-child {
     font-size: 32px;
 }
+header ul li:first-child a::before {
+    display: none;
+}
 header a svg, #footer div:first-child a:first-child svg {
     height: 28px;
     width: fit-content;
@@ -243,7 +251,7 @@ h1 {
     position: absolute;
     top: 0;
     right: var(--marge);
-    height: 125%;
+    height: 100%;
     width: 100%;
     margin: auto 0;
 }
@@ -520,6 +528,9 @@ footer hr {
 }
 #footer > div:first-child {
     margin-bottom: 25px;
+}
+#footer > div:first-child *::before {
+    display: none;
 }
 #footer > div *:first-child {
     margin-right: auto;
