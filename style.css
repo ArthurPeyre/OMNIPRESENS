@@ -96,21 +96,23 @@
     content: "";
     position: absolute;
     bottom: -2px;
-    left: 0;
+    left: unset;
+    right: 0;
     background-color: #fff;
     height: 2px;
-    width: 0;
+    width: 0%;
     transition: all 150ms linear;
 }
 .dark a:hover::before {
     width: 100%;
-    right: 0;
+    left: 0;
+    right: unset;
 }
 .dark .btn {
     box-shadow: 0 0 0 2px #fff;
     font-weight: 400;
 }
-.dark .btn::before, .dark .btn2::before {
+.dark .btn::before, .dark .btn2::before, header ul:first-child li:last-child a::before {
     display: none;
 }
 .dark .btn:hover {
@@ -121,7 +123,7 @@
     font-weight: 400;
     fill: #fff;
 }
-.dark .container, header nav ul {
+.dark .container, header nav ul:first-child {
     max-width: var(--max-size);
 }
 .dark .container > div::before {
@@ -171,6 +173,7 @@ body {
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
+    min-width: 325px;
 }
 
 header {
@@ -179,34 +182,49 @@ header {
     z-index: 999;
     width: 100%;
 }
-header nav ul {
+header nav ul:first-child {
     margin: 0 auto;
     height: 75px;
     padding: 0 var(--marge);
 }
-header ul li:first-child {
+header ul:first-child li:first-child {
     margin-right: auto;
 }
-header ul li:first-child a, header ul, #footer div:first-child a:first-child {
+header ul:first-child li:first-child a, header ul:first-child, #footer div:first-child a:first-child {
     display: flex;
     align-items: center;
     gap: 15px;
 }
-header ul li:first-child a, #footer div:first-child a:first-child {
+header ul:first-child li:first-child a, #footer div:first-child a:first-child {
     font-size: 32px;
 }
-header ul li:first-child a::before {
+header ul:first-child li:first-child a::before {
     display: none;
 }
 header a svg, #footer div:first-child a:first-child svg {
     height: 28px;
     width: fit-content;
 }
-header ul {
+header ul:first-child {
     gap: 25px;
 }
 header #burger_menu {
     display: none;
+}
+header ul:last-child {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    gap: var(--marge);
+    align-items: center;
+    background-color: var(--bg-color);
+    padding: var(--marge);
+    visibility: hidden;
+}
+.active {
+    visibility: hidden !important;
 }
 
 
@@ -542,11 +560,15 @@ footer hr {
 
 
 @media (max-width: 950px) {
-    header ul li {
+    header ul:first-child li {
         display: none;
     }
-    header #burger_menu, header ul li:first-child {
+    header #burger_menu, header ul:first-child li:first-child {
         display: initial;
+    }
+
+    .active {
+        visibility: visible !important;
     }
 }
 
@@ -621,13 +643,18 @@ footer hr {
         justify-content: center;
     }
 
+    header ul:last-child li:last-child {
+        display: flex;
+        width: 100%;
+    }
+
     section, footer {
         margin-top: 75px;
     }
 }
 
 @media (max-width: 375px) {
-    header ul li:first-child a {
+    header ul:first-child li:first-child a {
         display: initial;
     }
 }

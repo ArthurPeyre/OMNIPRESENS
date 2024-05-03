@@ -22,7 +22,13 @@
                 <li><a href="">Présentation</a></li>
                 <li><a href="">Blog</a></li>
                 <li><a href="" class="btn">Faire appel à nous</a></li>
-                <li id="burger_menu"><a href=""><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="0.5" width="15" height="3" rx="1.5" fill="white"/><rect y="10.5" width="25" height="3" rx="1.5" fill="white"/><rect x="5" y="20.5" width="20" height="3" rx="1.5" fill="white"/></svg></a></li>
+                <li id="burger_menu" onclick="toggleNav()"><svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="0.5" width="15" height="3" rx="1.5" fill="white"/><rect y="10.5" width="25" height="3" rx="1.5" fill="white"/><rect x="5" y="20.5" width="20" height="3" rx="1.5" fill="white"/></svg></li>
+            </ul>
+            <ul id="nav_slider">
+                <li><a href="./index.html">Expertises</a></li>
+                <li><a href="">Présentation</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="" class="btn">Faire appel à nous</a></li>
             </ul>
         </nav>
     </header>
@@ -31,11 +37,11 @@
         <div class="container">
             <div id="phone_container">
                 <video class="phone_anim" muted>
-                    <source src="./images/Composition 1,1.mp4" type="video/mp4">
+                    <source src="./images/Composition 1,1_1.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <video class="phone_anim" muted style="display: none;">
-                    <source src="./images/Composition 1,1_1.mp4" type="video/mp4">
+                    <source src="./images/Composition 1,1.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <video class="phone_anim" muted style="display: none;">
@@ -306,6 +312,8 @@
 
 
     <script>
+        var nav = document.getElementById('nav_slider');
+
         var expertise = document.getElementById('expertise');
         var tabExpertises = [
             'Google Ads', 
@@ -333,6 +341,12 @@
             videos[nextIndex].play();
         }
 
+
+        function toggleNav() {
+            nav.classList.toggle('active');
+        }
+
+
         // Fonction pour effacer le texte précédent lettre par lettre
         function eraseText() {
             if (expertise.textContent.length > 0) {
@@ -358,6 +372,9 @@
             }
         }
 
+
+
+
         // Démarrer le processus après que la page soit complètement chargée
         window.addEventListener('load', function() {
             // document.getElementById('body').style.visibility = 'visible';
@@ -366,19 +383,15 @@
             videos[0].addEventListener('ended', function() {
                 playNextVideo(0);
             });
-
             videos[1].addEventListener('ended', function() {
                 playNextVideo(1);
             });
-
             videos[2].addEventListener('ended', function() {
                 playNextVideo(2);
             });
-
             videos[3].addEventListener('ended', function() {
                 playNextVideo(3);
             });
-
             videos[0].play();
         });
     </script>
