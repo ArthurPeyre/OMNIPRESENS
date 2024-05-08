@@ -6,6 +6,35 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="style.css">
+    <style>
+        header {
+            position: sticky !important;
+            top: 0;
+            left: 0;
+        }
+
+        #article__container {
+            display: grid;
+            gap: 100px;
+            padding: 25px;
+            margin-top: 0;
+        }
+        .article__view {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            width: min(800px, 100%);
+            margin: 0 auto;
+        }
+        .article__view h2:hover {
+            text-decoration: underline;
+        }
+        .article__view img {
+            max-height: 400px;
+            border-radius: 25px;
+            box-shadow: 0 5px 10px 0 #00000022;
+        }
+    </style>
 </head>
 <body>
 
@@ -35,10 +64,45 @@
     </header>
 
 
-    <!-- Calendly inline widget begin -->
-    <div class="calendly-inline-widget" data-url="https://calendly.com/arth-peyre/30min" style="min-width:320px;height:700px;"></div>
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    <!-- Calendly inline widget end -->
+    <section id="article__container">
+        
+        <div class="article__view">
+            <a href="./articles/La_puissance_de_Google_Ads.html"><h2 class="blue">La puissance de Google Ads : les chiffres parlent pour eux-mêmes</h2></a>
+            <p>Dans un paysage numérique en constante évolution, Google Ads est devenu un outil incontournable pour les entreprises cherchant à accroître leur visibilité en ligne et à attirer des clients qualifiés. Les données ne mentent pas, découvrons pourquoi Google Ads est indispensable pour votre entreprise.</p>
+            <img src="./images/pexels-greta-hoffman-7675870.jpg" alt="">
+            <h3>1. Portée Mondiale</h3>
+            <p>Avec plus de 6 milliards de recherches effectuées sur Google chaque jour, la portée mondiale de Google Ads est sans précédent. En utilisant cette plateforme publicitaire, les entreprises peuvent toucher des audiences du monde entier, augmentant ainsi leur visibilité et leur potentiel de croissance.</p>
+            <a href="./articles/La_puissance_de_Google_Ads.html" class="btn2">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.50012 1.37326C2.50012 0.681819 1.9415 0.123198 1.25006 0.123198C0.55862 0.123198 -2.44181e-08 0.681819 -5.46419e-08 1.37326L-2.18568e-07 5.12344C-3.09068e-07 7.19386 1.67977 8.87363 3.75018 8.87363L25.7312 8.87363L22.8639 11.741C22.3756 12.2293 22.3756 13.0223 22.8639 13.5106C23.3522 13.9989 24.1452 13.9989 24.6335 13.5106L29.6338 8.51033C30.1221 8.02202 30.1221 7.22901 29.6338 6.74071L24.6335 1.74047C24.1452 1.25216 23.3522 1.25216 22.8639 1.74047C22.3756 2.22877 22.3756 3.02178 22.8639 3.51008L25.7312 6.3735L3.75018 6.3735C3.05874 6.3735 2.50012 5.81488 2.50012 5.12344L2.50012 1.37326Z" fill="#2F59CC"/></svg>
+                En savoir plus
+            </a>
+        </div>
+
+        <div class="article__view">
+            <a href="./articles/L_evolution_imparable_de_l_e-commerce.html"><h2 class="blue">L'évolution imparable de l'e-commerce : pourquoi les boutiques en ligne sont essentielles pour toute entreprise</h2></a>
+            <p>L'avènement de l'e-commerce a révolutionné la façon dont les consommateurs interagissent avec les entreprises et effectuent des achats. L'évolution rapide de ce secteur met en évidence l'importance croissante des boutiques en ligne pour les entreprises de toutes tailles. Explorons cette tendance incontournable et son impact sur le monde des affaires.</p>
+            <img src="./images/pexels-ivan-samkov-7620629.jpg" alt="">
+            <h3>1. Croissance Exponentielle de l'E-commerce</h3>
+            <p>L'e-commerce est en pleine expansion, avec des ventes mondiales en ligne dépassant les 146 milliards $ en 2022, selon Statista. Cette croissance fulgurante est alimentée par la commodité, le choix et la flexibilité offerts aux consommateurs par les plateformes de commerce en ligne.</p>
+            <a href="./articles/L_evolution_imparable_de_l_e-commerce.html" class="btn2">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.50012 1.37326C2.50012 0.681819 1.9415 0.123198 1.25006 0.123198C0.55862 0.123198 -2.44181e-08 0.681819 -5.46419e-08 1.37326L-2.18568e-07 5.12344C-3.09068e-07 7.19386 1.67977 8.87363 3.75018 8.87363L25.7312 8.87363L22.8639 11.741C22.3756 12.2293 22.3756 13.0223 22.8639 13.5106C23.3522 13.9989 24.1452 13.9989 24.6335 13.5106L29.6338 8.51033C30.1221 8.02202 30.1221 7.22901 29.6338 6.74071L24.6335 1.74047C24.1452 1.25216 23.3522 1.25216 22.8639 1.74047C22.3756 2.22877 22.3756 3.02178 22.8639 3.51008L25.7312 6.3735L3.75018 6.3735C3.05874 6.3735 2.50012 5.81488 2.50012 5.12344L2.50012 1.37326Z" fill="#2F59CC"/></svg>
+                En savoir plus
+            </a>
+        </div>
+
+        <div class="article__view">
+            <a href="./articles/La_puissance_de_la_création_de_contenu.html"><h2 class="blue">La puissance de la création de contenu : saisir les opportunités du marché nouveau</h2></a>
+            <p>L'avènement de l'e-commerce a révolutionné la façon dont les consommateurs interagissent avec les entreprises et effectuent des achats. L'évolution rapide de ce secteur met en évidence l'importance croissante des boutiques en ligne pour les entreprises de toutes tailles. Explorons cette tendance incontournable et son impact sur le monde des affaires.</p>
+            <img src="./images/pexels-zachtheshoota-2953898.jpg" alt="">
+            <h3>1. Croissance Exponentielle de l'E-commerce</h3>
+            <p>L'e-commerce est en pleine expansion, avec des ventes mondiales en ligne dépassant les 146 milliards $ en 2022, selon Statista. Cette croissance fulgurante est alimentée par la commodité, le choix et la flexibilité offerts aux consommateurs par les plateformes de commerce en ligne.</p>
+            <a href="./articles/La_puissance_de_la_création_de_contenu.html" class="btn2">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.50012 1.37326C2.50012 0.681819 1.9415 0.123198 1.25006 0.123198C0.55862 0.123198 -2.44181e-08 0.681819 -5.46419e-08 1.37326L-2.18568e-07 5.12344C-3.09068e-07 7.19386 1.67977 8.87363 3.75018 8.87363L25.7312 8.87363L22.8639 11.741C22.3756 12.2293 22.3756 13.0223 22.8639 13.5106C23.3522 13.9989 24.1452 13.9989 24.6335 13.5106L29.6338 8.51033C30.1221 8.02202 30.1221 7.22901 29.6338 6.74071L24.6335 1.74047C24.1452 1.25216 23.3522 1.25216 22.8639 1.74047C22.3756 2.22877 22.3756 3.02178 22.8639 3.51008L25.7312 6.3735L3.75018 6.3735C3.05874 6.3735 2.50012 5.81488 2.50012 5.12344L2.50012 1.37326Z" fill="#2F59CC"/></svg>
+                En savoir plus
+            </a>
+        </div>
+
+    </section>
 
 
     <footer class="dark">
