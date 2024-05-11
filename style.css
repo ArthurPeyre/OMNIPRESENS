@@ -32,6 +32,7 @@
     list-style: none;
     color: #000;
     text-decoration: none;
+    outline: none;
 }
 
 
@@ -39,7 +40,7 @@
     text-align: center;
     padding: 12px 20px;
     border-radius: 100vh;
-    box-shadow: 0 0 0 2px var(--main-color);
+    box-shadow: inset 0 0 0 2px var(--main-color);
     color: var(--main-color);
     width: fit-content;
     font-weight: 600;
@@ -109,7 +110,7 @@
     right: unset;
 }
 .dark .btn {
-    box-shadow: 0 0 0 2px #fff;
+    box-shadow: inset 0 0 0 2px #fff;
     font-weight: 400;
 }
 .dark .btn::before, .dark .btn2::before, header ul:first-child li:last-child a::before {
@@ -128,6 +129,16 @@
 }
 .dark .container > div::before {
     display: none;
+}
+.dark input {
+    background-color: #fff;
+    color: #000;
+    padding: 15px;
+    font-size: 1rem;
+}
+.dark input[type=submit] {
+    border-radius: 100vh;
+    width: fit-content;
 }
 
 .blue {
@@ -159,6 +170,10 @@ section img {
 h2 {
     font-size: 36px;
     font-weight: 600;
+}
+
+input {
+    border: none;
 }
 
 
@@ -531,8 +546,14 @@ h1 {
 footer > div {
     padding: var(--marge);
 }
-footer .devis {
+footer .container:first-child {
     padding-bottom: 0;
+}
+footer .container:first-child > form {
+    gap: 10px;
+}
+footer .container:first-child > form input[type=submit] {
+    padding: 10px 25px;
 }
 footer > div:last-child {
     padding-top: 0;
@@ -585,6 +606,20 @@ footer hr {
 /* Ajouter une bordure à la barre de défilement */
 ::-webkit-scrollbar-thumb:hover {
     background: #050915ee; /* Changez la couleur selon vos préférences */
+}
+
+
+
+
+.container > * {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 500ms ease-in-out;
+}
+
+.container > *.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
